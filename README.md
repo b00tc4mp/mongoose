@@ -1,2 +1,0 @@
-# mongoose-demos
-Mongoose Demos

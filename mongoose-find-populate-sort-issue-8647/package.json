@@ -1,5 +1,5 @@
 {
-  "name": "mongoose-query-order-by-populated-field",
+  "name": "mongoose-find-populate-sort-issue-8647",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mongoose": "^5.9.1"
+    "mongoose": "^5.9.3"
   }
 }
