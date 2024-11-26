@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const { Schema, Schema: { Types: { ObjectId } } } = mongoose
 const assert = require('assert')
 
-mongoose.set('debug', true)
+// mongoose.set('debug', true)
 
 const point = new Schema({
     type: {
@@ -15,7 +15,7 @@ const point = new Schema({
         type: [Number],
         required: true
     }
-});
+})
 
 const city = new Schema({
     name: String,
@@ -109,6 +109,26 @@ const City = mongoose.model('City', city)
         //     console.error(error)
         // }
 
+        // try {
+        //     const cities = await City.find({
+        //         location: {
+        //             $near: {
+        //                 $geometry: {
+        //                     type: 'Point',
+        //                     coordinates: [0, 0]
+        //                 },
+        //                 $maxDistance: 1000 * 1000 * 9
+        //             }
+        //         }
+        //     })
+
+        //     console.log(cities)
+
+        //     assert.equal(cities.length, 7, `all cities except 9, 8 and 7`)
+        // } catch (error) {
+        //     console.error(error)
+        // }
+
         try {
             const cities = await City.find({
                 location: {
@@ -117,14 +137,14 @@ const City = mongoose.model('City', city)
                             type: 'Point',
                             coordinates: [0, 0]
                         },
-                        $maxDistance: 1000 * 1000 * 9
+                        $maxDistance: 1000 * 1000 * 8
                     }
                 }
             })
 
             // console.log(cities)
 
-            assert.equal(cities.length, 7, `all cities except 9, 8 and 7`)
+            assert.equal(cities.length, 6, `all cities except 9, 8, 7 and 6`)
         } catch (error) {
             console.error(error)
         }
